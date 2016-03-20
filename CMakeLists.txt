@@ -4,8 +4,10 @@ project(test-external-project)
 
 message("INSTALL_PRFIX is ${CMAKE_INSTALL_PREFIX}")
 
-install (FILES 
-        example.txt
-    COMPONENT Runtime
-    DESTINATION test-external-project
-)
+if ( SETUP_INSTALL )
+    install (FILES 
+            example.txt
+        COMPONENT Runtime
+        DESTINATION test-external-project
+    )
+endif()
